@@ -26,9 +26,9 @@ The Book Management System is a full-stack web application that allows users to 
 
 ## Installation
 
+```bash
 1. Clone the repository:
 
-```bash
 git clone <repository-url>
 cd bookapp
 
