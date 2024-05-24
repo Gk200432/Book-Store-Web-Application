@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Book Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Book Management System is a full-stack web application that allows users to manage a collection of books. It provides features such as user authentication, CRUD operations for books, and search functionality.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- **Frontend**:
+  - React.js
+  - HTML/CSS
+  - Axios, Fetch (for API requests)
+  
+- **Backend**:
+  - Node.js
+  - Express.js
+  - MongoDB
+  - Mongoose (for MongoDB ODM)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **User Authentication**: Users can log in with their username and password.
+- **Role-based Access Control**: Different users have different permissions based on their roles (admin or regular user).
+- **Book Management**:
+  - Admins can create, update, delete and read books(CRUD).
+  - Regular users can view books and search for them.
+- **Responsive Design**: The application is designed to work well on both desktop and mobile devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone <repository-url>
+cd bookapp
 
-### `npm run build`
+2. Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install mongodb cors express
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Configure environment variables:
+   - Create a `.env` file in the root directory.
+   - Add environment variables for MongoDB connection, session secret, etc.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the server:
 
-### `npm run eject`
+Move to the backend folder (cd bookapp/backend)
+node server.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+6. Access the application at `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API Endpoints
 
-## Learn More
+- **GET /RetrAll**: Retrieve all books.
+- **POST /Insertion**: Insert a new book.
+- **POST /Updation**: Update an existing book.
+- **GET /search**: Search for books.
+- **POST /Deletion**: Delete a book.
+- **POST /login**: User login.
+- **POST /signup**: User signup.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Folder Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **src**: Contains the frontend React.js code.
+- **public**: Contains static assets and the HTML template for the frontend.
+- **backend**: Contains the backend Node.js code, including models and routes.
+- **node_modules**: Contains project dependencies.
 
-### Code Splitting
+## Collections
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **book**: Stores information about books, including fields like `bid`, `title`, `author`, `genre`, and `year_published`.
+- **student_credential**: Stores credentials for student users, including fields like `username` and `password`.
+- **admin_credential**: Stores credentials for admin users, including fields like `username` and `password`.
 
-### Analyzing the Bundle Size
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-### Making a Progressive Web App
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is licensed under the [MIT License](LICENSE).
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
